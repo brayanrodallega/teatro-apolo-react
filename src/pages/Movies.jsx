@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import Movie from "../components/Movie";
+
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -10,10 +11,10 @@ const Movies = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/movies");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/movies`);
         setMovies(response.data); // Supongamos que el backend devuelve un array de películas
       } catch (error) {
-        toast.error("Error al cargar las películas.");
+        toast.error("Error al cargar las películas.", error);
       }
     };
 
@@ -26,11 +27,7 @@ const Movies = () => {
       <div className="movies-list">
         {movies.length > 0 ? (
           movies.map((movie) => (
-            <div key={movie._id} className="movie-card">
-              <h3>{movie.title}</h3>
-              <p>{movie.description}</p>
-              <Link to={`/reservation/${movie._id}`}>Reservar</Link>
-            </div>
+            <Movie key={movie._id} movie={movie} />
           ))
         ) : (
           <p>No hay películas disponibles en este momento.</p>

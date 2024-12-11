@@ -143,3 +143,618 @@ form button {
 form button:hover {
   background-color: #0056b3;
 }
+
+.header {
+    padding: 20px;
+    background-color: #000000;
+    width: 100%;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.header-nav-logo {
+    font-size: 1.3rem; 
+    color: white;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-nav-logo a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-nav-logo button {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.header-nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    font-size: 1.1rem;
+    color: white;
+}
+
+.header-nav-menu a {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: blue;
+    color: white; 
+    padding: 10px 15px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease; 
+}
+
+.header-nav-menu li {
+    list-style: none;
+}
+
+.header-nav-menu a:hover {
+    background-color: darkblue; 
+}
+
+.header-nav-login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-nav-login a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.header-nav-login a:hover {
+    color: lightgray; /* Color de texto al hacer hover */
+}
+
+.header-nav-menu-search {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.header-nav-menu-search input {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    border-bottom: solid 1px gray;
+}
+
+.header-nav-menu-search button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos de la Sección de Filtros */
+.filter-section {
+    margin-top: 25px;
+    padding: 15px; 
+    background-color: #eee; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.filter-btn {
+    padding: 10px 15px; /* Espaciado interno */
+    border: 1px solid blue; /* Borde azul */
+    background-color: white; /* Color de fondo blanco */
+    color: blue; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de puntero al pasar el ratón */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+.filter-btn:hover {
+    background-color: blue; /* Color de fondo azul al pasar el ratón */
+    color: white; /* Cambiar el color del texto al pasar el ratón */
+}
+
+.date-select {
+    display: flex; /* Usar flexbox para alinear la etiqueta y el selector */
+    align-items: center; /* Centrar verticalmente la etiqueta y el selector */
+}
+
+.date-select label {
+    margin-right: 10px; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+}
+
+.date-select select {
+    padding: 10px; /* Espaciado interno del selector */
+    border: 1px solid blue; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: white; /* Color de fondo blanco */
+    cursor: pointer; /* Cursor en forma de puntero */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.date-select select:hover {
+    border-color: blue; /* Cambiar el color del borde al pasar el ratón */
+}
+
+
+/* Estilos de las Películas */
+.movies {
+    padding: 20px;
+    background-color: #f8f9fa; 
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px; 
+}
+
+.movie {
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    overflow: hidden; 
+    transition: transform 0.3s; 
+}
+
+.movie:hover {
+    transform: scale(1.2); 
+}
+
+.poster img {
+    width: 100%; 
+    height: auto; 
+    max-height: 300px; 
+}
+
+.title {
+    text-align: center; 
+    padding: 10px 0; 
+    color: #333; 
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.reparto {
+    text-align: left; 
+    padding: 10px 0; 
+    color: #777; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.director {
+    text-align: left; 
+    padding: 10px 0; 
+    color: #777; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.duracion {
+    text-align: left; 
+    padding: 10px 0; 
+    color: #777; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+.fecha {
+    text-align: left; 
+    padding: 10px 0; 
+    color: #777; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu h3{
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-menu li {
+    padding: 10px 20px;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    font-size: 1.2rem;
+}
+
+.sidebar-menu li a:hover {
+    background-color: blue;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Transition for opening and closing */
+.sidebar.open {
+    width: 250px;
+}
+
+
+/* Estilos de la Sección de Contacto */
+
+
+/* Formulario de contacto */
+#contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 50px 0 50px 0;
+}
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form textarea {
+    height: 150px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #d35400;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Estilos del Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.movie-details {
+    display: flex;
+    justify-content: flex-start; /* Alinea las columnas al principio */
+    align-items: flex-start;
+    gap: 10px; /* Reduce el espacio entre las columnas */
+}
+
+.movie-details img {
+    width: 250px;
+    height: auto;
+}
+
+.movie-info {
+    flex: 1;
+    padding-right: 1%; /* Añadir algo de espacio a la derecha */
+}
+
+.seats-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.seat {
+    padding: 10px;
+    margin: 5px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.seat.selected {
+    background-color: #2ecc71;
+}
+
+.seat:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo de Carrusel */
+
+
+
+.carousel {
+    position: relative;
+    width: 100%; /* Cambiado a 100% */
+    height: 50vh; /* Altura de 40vh */
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Asegurar que ocupe toda la altura */
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%; /* Asegurar que ocupe toda la altura */
+    display: flex; /* Para centrar la imagen */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Mantener la relación de aspecto de la imagen */
+    border-radius: 10px;
+    opacity: 0.9;
+    transition: opacity 0.5s;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1; /* Asegura que los botones estén por encima de las imágenes */
+    border-radius: 15px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.active {
+    background-color: black;
+}
+
+/* Comidas main styles */
+
+
+/* Estilos para la sección de comidas */
+.comidas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: #f5f5f5;
+}
+
+.comidas h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Grid para organizar los elementos de comida */
+.comidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilos para cada comida */
+.comida-item {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 1rem;
+}
+
+.comida-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de cada comida */
+.comida-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* Título de la comida */
+.comida-item h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+/* Descripción de la comida (precios) */
+.comida-item p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.comida-item p:nth-child(3),
+.comida-item p:nth-child(4),
+.comida-item p:nth-child(5) {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .comidas-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+
+
 
 const Register = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
+    //confirmPassword: "",
     name: "",
-    documentType: "CC",
-    documentNumber: "",
+    //documentType: "CC",
+    //documentNumber: "",
     phone: "",
-    birthDate: "",
+    //birthDate: "",
   });
 
   const handleChange = (e) => {
@@ -20,13 +22,13 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.password !== form.confirmPassword) {
-      toast.error("Las contraseñas no coinciden.");
-      return;
-    }
+    // if (form.password !== form.confirmPassword) {
+    //   toast.error("Las contraseñas no coinciden.");
+    //   return;
+    // }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/register", form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, form);
       toast.success("Usuario registrado exitosamente. ¡Inicia sesión!");
     } catch (error) {
       toast.error(error.response?.data?.message || "Error al registrar usuario.");
@@ -53,23 +55,31 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <input
+        {/* <input
           type="password"
           name="confirmPassword"
           placeholder="Confirmar contraseña"
           value={form.confirmPassword}
           onChange={handleChange}
           required
-        />
+        /> */}
         <input
           type="text"
           name="name"
-          placeholder="Nombre completo"
+          placeholder="Nombre"
           value={form.name}
           onChange={handleChange}
           required
         />
-        <select name="documentType" value={form.documentType} onChange={handleChange}>
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Apellido"
+          value={form.lastName}
+          onChange={handleChange}
+          required
+        />
+        {/* <select name="documentType" value={form.documentType} onChange={handleChange}>
           <option value="CC">Cédula de Ciudadanía</option>
           <option value="CE">Cédula de Extranjería</option>
           <option value="TI">Tarjeta de Identidad</option>
@@ -82,7 +92,7 @@ const Register = () => {
           value={form.documentNumber}
           onChange={handleChange}
           required
-        />
+        /> */}
         <input
           type="text"
           name="phone"
@@ -91,13 +101,13 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <input
+        {/* <input
           type="date"
           name="birthDate"
           value={form.birthDate}
           onChange={handleChange}
           required
-        />
+        /> */}
         <button type="submit">Registrarse</button>
       </form>
     </div>
