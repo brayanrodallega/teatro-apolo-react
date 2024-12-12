@@ -39,3 +39,32 @@
 .register-container button:hover {
   background-color: #0056b3;
 }
+
+/* Media Queries para hacer el registro responsive */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 20px;
+    height: auto;
+  }
+
+  .register-container input {
+    width: 250px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 10px;
+    height: auto;
+  }
+
+  .register-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .register-container input {
+    width: 200px;
+    height: 30px;
+  }
+}

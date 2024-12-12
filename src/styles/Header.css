@@ -1,3 +1,4 @@
+/* Estilos del Header */
 .header {
     padding: 20px;
     background-color: #000000;
@@ -160,4 +161,36 @@
 /* Transition for opening and closing */
 .sidebar.open {
     width: 250px;
+}
+
+/* Media Queries para hacer el header responsive */
+@media (max-width: 768px) {
+    .header-nav-menu,
+    .header-nav-menu-search,
+    .header-nav-login {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-nav-logo {
+        font-size: 1rem;
+    }
+
+    .header-nav-menu a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .header-nav-login a {
+        font-size: 0.9rem;
+    }
+
+    .header-nav-menu-search input {
+        font-size: 0.9rem;
+    }
+
+    .header-nav-menu-search button {
+        font-size: 0.9rem;
+    }
 }

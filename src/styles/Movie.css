@@ -10,7 +10,7 @@
 }
 
 .movie:hover {
-    transform: scale(1.2); 
+    transform: scale(1.05); 
 }
 
 .poster img {
@@ -22,10 +22,38 @@
 .title {
     text-align: center; 
     padding: 10px 0; 
-    color: #333; 
-    font-size: 1.2rem; 
-    font-weight: bold; 
-    text-transform: uppercase;
+    color: #333;
+}
+
+/* Media Queries para hacer las películas responsive */
+@media (max-width: 768px) {
+    .movie {
+        margin-bottom: 1rem;
+    }
+
+    .poster img {
+        height: 150px;
+    }
+
+    .title {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie {
+        margin-bottom: 0.5rem;
+    }
+
+    .poster img {
+        height: 120px;
+    }
+
+    .title {
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
 }
 
 .reparto {

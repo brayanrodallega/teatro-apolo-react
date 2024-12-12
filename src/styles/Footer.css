@@ -23,5 +23,32 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: lightgray;
+}
+
+/* Media Queries para hacer el footer responsive */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links div {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer h4 {
+        font-size: 1.2rem;
+    }
+
+    footer a {
+        font-size: 1rem;
+    }
 }

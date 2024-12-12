@@ -68,3 +68,36 @@
 .active {
     background-color: black;
 }
+
+/* Media Queries para hacer el carrusel responsive */
+@media (max-width: 768px) {
+    .carousel {
+        height: 40vh;
+    }
+
+    .carousel-button {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    .indicator {
+        height: 8px;
+        width: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 30vh;
+    }
+
+    .carousel-button {
+        font-size: 0.8rem;
+        padding: 3px;
+    }
+
+    .indicator {
+        height: 6px;
+        width: 6px;
+    }
+}

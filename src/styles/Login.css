@@ -1,11 +1,12 @@
 /* Estilos del Login*/
-
+/* Estilos para la página de login */
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #f5f5f5;
 }
 
 .login-container h2 {
@@ -39,5 +40,37 @@
 
 .login-container button:hover {
   background-color: #0056b3;
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Media Queries para hacer la página de login responsive */
+@media (max-width: 768px) {
+  .login-container {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .login-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .login-form {
+    padding: 1rem;
+  }
 }
 

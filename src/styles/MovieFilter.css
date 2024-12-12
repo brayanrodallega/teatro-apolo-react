@@ -24,9 +24,11 @@
     color: white; /* Cambiar el color del texto al pasar el ratón */
 }
 
+/* Estilos del filtro de películas */
 .date-select {
-    display: flex; /* Usar flexbox para alinear la etiqueta y el selector */
-    align-items: center; /* Centrar verticalmente la etiqueta y el selector */
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .date-select label {
@@ -37,7 +39,6 @@
 
 .date-select select {
     padding: 10px; /* Espaciado interno del selector */
-    /* border: 2px solid blue; /* Borde azul */
     border-radius: 5px; /* Bordes redondeados */
     background-color: white; /* Color de fondo blanco */
     cursor: pointer; /* Cursor en forma de puntero */
@@ -46,4 +47,32 @@
 
 .date-select select:hover {
     border-color: blue; /* Cambiar el color del borde al pasar el ratón */
+}
+
+/* Media Queries para hacer el filtro de películas responsive */
+@media (max-width: 768px) {
+    .date-select {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date-select label {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .date-select select {
+        width: 100%;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .date-select label {
+        font-size: 0.9rem;
+    }
+
+    .date-select select {
+        padding: 6px;
+    }
 }

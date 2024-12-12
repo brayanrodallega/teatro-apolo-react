@@ -23,16 +23,14 @@
 /* Estilos para cada comida */
 .comida-item {
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
     padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .comida-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Imagen de cada comida */
@@ -94,5 +92,31 @@ table tr:hover {
 @media (max-width: 768px) {
     .comidas-grid {
         grid-template-columns: 1fr;
+    }
+
+    .comidas {
+        padding: 1.5rem 1rem;
+    }
+
+    .comidas h2 {
+        font-size: 2rem;
+    }
+
+    .comida-item {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .comidas {
+        padding: 1rem 0.5rem;
+    }
+
+    .comidas h2 {
+        font-size: 1.5rem;
+    }
+
+    .comida-item {
+        padding: 0.5rem;
     }
 }
