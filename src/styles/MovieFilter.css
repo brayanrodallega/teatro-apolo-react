@@ -1,0 +1,49 @@
+/* Estilos de la Sección de Filtros */
+.filter-section {
+    margin-top: 25px;
+    padding: 15px; 
+    background-color: #eee; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.filter-btn {
+    padding: 10px 15px; /* Espaciado interno */
+    /* border: 2px solid blue;  Borde azul */
+    background-color: white; /* Color de fondo blanco */
+    color: blue; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de puntero al pasar el ratón */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+.filter-btn:hover {
+    background-color: blue; /* Color de fondo azul al pasar el ratón */
+    color: white; /* Cambiar el color del texto al pasar el ratón */
+}
+
+.date-select {
+    display: flex; /* Usar flexbox para alinear la etiqueta y el selector */
+    align-items: center; /* Centrar verticalmente la etiqueta y el selector */
+}
+
+.date-select label {
+    margin-right: 10px; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+}
+
+.date-select select {
+    padding: 10px; /* Espaciado interno del selector */
+    /* border: 2px solid blue; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: white; /* Color de fondo blanco */
+    cursor: pointer; /* Cursor en forma de puntero */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.date-select select:hover {
+    border-color: blue; /* Cambiar el color del borde al pasar el ratón */
+}

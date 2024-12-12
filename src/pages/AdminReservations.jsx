@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
+import "./../styles/Table.css";
 
 const AdminReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -8,38 +10,13 @@ const AdminReservations = () => {
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/reservations`);
-      //   {
-      //     "message": "Reservas obtenidas con éxito",
-      //     "reservations": [
-      //         {
-      //             "_id": "6758ece6aa29be6910ff4e13",
-      //             "title": "El Rey León",
-      //             "date": "2024-11-20T18:00:00.000Z",
-      //             "user": {
-      //                 "_id": "67550bff11066983cffcf5a9",
-      //                 "email": "estiben@mail.com",
-      //                 "name": "Estiben"
-      //             },
-      //             "seats": 4,
-      //             "__v": 0
-      //         }
-      //     ]
-      // }
-        // Supongamos que el backend devuelve un array de reservas
-
-        // format date
-        const date = new Date(response.data.reservations.date);
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const dateFormatted = date.toLocaleDateString('es-ES', options);
-        console.log(dateFormatted);
-
-        // format time
-        const time = new Date(response.data.reservations.date);
-        const timeFormatted = time.toLocaleTimeString('es-ES');
-        console.log(timeFormatted);
+        const token = Cookies.get("token");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/reservations`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setReservations(response.data.reservations);
-        console.log(response.data.reservations);
         setLoading(false);
       } catch (error) {
         console.error("Error al obtener las reservas:", error);
@@ -59,13 +36,33 @@ const AdminReservations = () => {
     return time.toLocaleTimeString('es-ES');
   }
 
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm("¿Estás seguro de que deseas eliminar esta reserva?");
+    if (confirmDelete) {
+      try {
+        const token = Cookies.get("token");
+        await axios.delete(`${import.meta.env.VITE_API_URL}/reservations/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setReservations((prevReservations) =>
+          prevReservations.filter((reservation) => reservation._id !== id)
+        );
+        alert("Reserva eliminada con éxito.");
+      } catch (error) {
+        console.error("Error al eliminar la reserva:", error);
+        alert("Error al eliminar la reserva. Intenta nuevamente.");
+      }
+    }
+  };
 
   if (loading) {
     return <p>Cargando reservas...</p>;
   }
 
   return (
-    <div>
+    <div className="table-container">
       <h2>Listado de Reservas</h2>
       <table>
         <thead>
@@ -76,6 +73,7 @@ const AdminReservations = () => {
             <th>Fecha</th>
             <th>Hora</th>
             <th>Asientos</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -87,6 +85,9 @@ const AdminReservations = () => {
               <td>{dateformater(new Date(reservation.date))}</td>
               <td>{timeformater(new Date(reservation.date))}</td>
               <td>{reservation.seats}</td>
+              <td>
+                <button onClick={() => handleDelete(reservation._id)}>Eliminar</button>
+              </td>
             </tr>
           ))}
         </tbody>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Movie from "../components/Movie";
+import "../styles/Movies.css";
 
 
 const Movies = () => {

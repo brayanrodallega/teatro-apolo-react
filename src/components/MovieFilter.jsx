@@ -1,12 +1,12 @@
-
 import { Link } from "react-router-dom";
+import "../styles/MovieFilter.css";
 
 function MovieFilter() {
     return (
         <section className="filter-section">
             <Link to="/"><button className="filter-btn">Todas las películas</button></Link>
-            <Link to="/hoy"><button className="filter-btn">Hoy</button></Link>
-            <Link to="/proximante"> <button className="filter-btn">Próximamente</button></Link>
+            <Link to="/"><button className="filter-btn">Hoy</button></Link>
+            <Link to="/"> <button className="filter-btn">Próximamente</button></Link>
             <div className="date-select">
                 <label htmlFor="date">Seleccionar fecha:</label>
                 <select id="date">

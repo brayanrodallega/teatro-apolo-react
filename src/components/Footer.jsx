@@ -1,33 +1,5 @@
-{/* <footer>
-        <div class="footer-links">
-            <div>
-                <h4>Películas</h4>
-                <a href="#">Acción</a><br>
-                <a href="#">Comedia</a><br>
-                <a href="#">Drama</a><br>
-            </div>
-            <div>
-                <h4>Eventos</h4>
-                <a href="#">Conciertos</a><br>
-                <a href="#">Teatro</a><br>
-                <a href="#">Deportes</a><br>
-            </div>
-            <div>
-                <h4>Sobre nosotros</h4>
-                <a href="contacto.html">Contacto</a><br>
-                <a href="#">Trabaja con nosotros</a><br>
-                <a href="#">Política de privacidad</a><br>
-            </div>
-            <div>
-                <h4>Síguenos en</h4>
-                <a href="#">Facebook</a><br>
-                <a href="#">Twitter</a><br>
-                <a href="#">Instagram</a><br>
-            </div>
-        </div>
-    </footer> */}
-
 import { Link } from "react-router-dom";
+import '../styles/Footer.css';
 
 
 function Footer() {

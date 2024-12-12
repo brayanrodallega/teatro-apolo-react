@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-
+import "../styles/Register.css";
 
 
 const Register = () => {
@@ -30,6 +30,7 @@ const Register = () => {
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, form);
       toast.success("Usuario registrado exitosamente. ¡Inicia sesión!");
+      window.location.href = "/login";
     } catch (error) {
       toast.error(error.response?.data?.message || "Error al registrar usuario.");
     }
